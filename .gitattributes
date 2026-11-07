@@ -1,0 +1,4 @@
+data/raw/* -text
+artifacts/**/*.json -text
+artifacts/**/*.csv -text
+*.joblib binary

@@ -1,0 +1,6 @@
+{
+  "file": "german.data",
+  "sha256": "b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871",
+  "rows": 1000,
+  "source": "UCI Statlog (German Credit Data), Prof. Hans Hofmann, Univ. Hamburg"
+}

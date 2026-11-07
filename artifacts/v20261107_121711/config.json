@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "cost_fn": 5,
+  "cost_fp": 1,
+  "best_params": {
+    "clf__class_weight": null,
+    "clf__max_depth": null,
+    "clf__min_samples_leaf": 3,
+    "clf__n_estimators": 400
+  },
+  "feature_set": "no_sensitive"
+}

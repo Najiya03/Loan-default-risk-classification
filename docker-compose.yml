@@ -1,0 +1,30 @@
+services:
+  api:
+    build: .
+    image: german-credit-risk
+    ports:
+      - "8000:8000"
+    environment:
+      - ARTIFACT_DIR=/app/artifacts
+      - LOG_DIR=/app/logs
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  ui:
+    image: german-credit-risk
+    command: ["streamlit", "run", "ui/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+    depends_on:
+      api:
+        condition: service_healthy
