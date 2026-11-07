@@ -1,6 +1,6 @@
 # Loan Default Risk Classification
 
-**Author:** Najiya N (M.Tech in AI)
+**Author:** Najiya N
 **Repository:** https://github.com/Najiya03/Loan-default-risk-classification
 
 A reproducible machine-learning application that estimates a loan applicant's default-risk class from the UCI Statlog German Credit dataset. It includes a versioned model pipeline, a FastAPI prediction service, a Streamlit interface, Docker packaging, automated tests, request logging, and a monitoring plan.
@@ -17,7 +17,7 @@ A reproducible machine-learning application that estimates a loan applicant's de
 | Recall / precision (default class) | 0.867 / 0.426 at threshold 0.23 |
 | Expected cost per applicant | 0.55 (approve everyone: 1.50, reject everyone: 0.70) |
 
-The threshold was chosen to minimise the dataset's documented cost matrix (approving a defaulter costs 5, rejecting a good applicant costs 1). The test set has only 200 rows (60 defaulters), so every metric carries wide uncertainty. The full write-up is in the evaluation report (`Evaluation_Report_Loan_Default_Risk.docx`).
+The threshold was chosen to minimise the dataset's documented cost matrix (approving a defaulter costs 5, rejecting a good applicant costs 1). The test set has only 200 rows (60 defaulters), so every metric carries wide uncertainty. 
 
 ## Project structure
 
@@ -241,6 +241,6 @@ Nine tests cover health, a valid prediction, missing field, invalid category, ou
 - **Scope:** no authentication, rate limiting, or audit trail. `/reload` is unprotected unless `ADMIN_TOKEN` is set.
 - **Training is notebook-based:** the pipeline is reproducible (fixed seed, saved split, pinned versions) but is not yet a single command-line script.
 
-## Data source and licence
+## Data source 
 
-UCI Statlog (German Credit Data), Prof. Dr. Hans Hofmann, Institut für Statistik und Ökonometrie, Universität Hamburg. Check the licence and terms on the UCI dataset page before redistributing the data.
+UCI Statlog (German Credit Data), Prof. Dr. Hans Hofmann, Institut für Statistik und Ökonometrie, Universität Hamburg. 
